@@ -26,19 +26,19 @@ echo '2.4 создание разделов'
   echo;
   echo;
   echo;
-  echo +100M;
+  echo +500M;
 
   echo n;
   echo;
   echo;
   echo;
-  echo +20G;
+  echo +30G;
 
   echo n;
   echo;
   echo;
   echo;
-  echo +1024M;
+  echo +4096M;
 
   echo n;
   echo p;
@@ -61,10 +61,11 @@ mkfs.ext4  /dev/sda4 -L home
 
 echo '2.4.3 Монтирование дисков'
 mount /dev/sda2 /mnt
-mkdir /mnt/{boot,home}
+mkdir /mnt/{boot,home,hard1}
 mount /dev/sda1 /mnt/boot
 swapon /dev/sda3
 mount /dev/sda4 /mnt/home
+mount /dev/sdb1 /mnt/hard1
 
 echo '3.1 Выбор зеркал для загрузки. Ставим зеркало от Яндекс'
 echo "Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
