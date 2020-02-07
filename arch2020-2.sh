@@ -62,19 +62,12 @@ fi
 echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
-echo "Какое DE ставим?"
-read -p "1 - XFCE, 2 - KDE, 3 - Openbox: " vm_setting
-if [[ $vm_setting == 1 ]]; then
-  pacman -S xfce4 xfce4-goodies --noconfirm
-elif [[ $vm_setting == 2 ]]; then
-  pacman -Sy plasma-meta kdebase --noconfirm
-elif [[ $vm_setting == 3 ]]; then  
-  pacman -S  openbox xfce4-terminal
-fi
+echo 'Установка KDE Plasma'
+pacman -Sy plasma-desktop	kdebase --noconfirm
 
-echo 'Cтавим DM'
-pacman -S lxdm --noconfirm
-systemctl enable lxdm
+echo 'Cтавим SDDM'
+pacman -S sddm --noconfirm
+systemctl enable sddm
 
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
@@ -82,10 +75,20 @@ pacman -S ttf-liberation ttf-dejavu --noconfirm
 echo 'Ставим сеть'
 pacman -S networkmanager network-manager-applet ppp --noconfirm
 
+echo 'Поддержка ntfc формата'
+pacman -S ntfs-3g --noconfirm
+
+echo 'Драйвера Nvidea'
+pacman -S nvidea lib32-nvidia-utils vulkan-tools --noconfirm
+
+echo 'Установка аудиодрайверов'
+pacman -S alsa-lib alsa-utils plasma-pa --noconfirm
+
+echo 'Ставим дополнительные программы'
+pacman -S screenfetch Firefox --noconfirm
+
 echo 'Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable NetworkManager
 
 echo 'Установка завершена! Перезагрузите систему.'
-echo 'Если хотите подключить AUR, установить мои конфиги XFCE, тогда после перезагрзки и входа в систему, установите wget (sudo pacman -S wget) и выполните команду:'
-echo 'wget git.io/arch3.sh && sh arch3.sh'
 exit
