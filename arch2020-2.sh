@@ -63,7 +63,7 @@ echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
 echo 'Установка KDE Plasma'
-pacman -Sy plasma-desktop	kdebase --noconfirm
+pacman -Sy plasma-desktop kdebase --noconfirm
 
 echo 'Cтавим SDDM'
 pacman -S sddm --noconfirm
