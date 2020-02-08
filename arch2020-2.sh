@@ -76,7 +76,7 @@ echo 'Ставим сеть'
 pacman -S networkmanager network-manager-applet ppp --noconfirm
 
 echo 'Поддержка ntfc формата'
-pacman -S ntfs-3g sddm-kcm --noconfirm
+pacman -S ntfs-3g sddm-kcm ufw --noconfirm
 
 echo 'Драйвера Nvidea'
 pacman -S nvidia lib32-nvidia-utils vulkan-tools --noconfirm
@@ -84,8 +84,11 @@ pacman -S nvidia lib32-nvidia-utils vulkan-tools --noconfirm
 echo 'Установка аудиодрайверов'
 pacman -S alsa-lib alsa-utils plasma-pa --noconfirm
 
+echo 'Установка KDE программ'
+pacman -S ark spectacle kcalc krita kdenlive --noconfirm
+
 echo 'Ставим дополнительные программы'
-pacman -S ark spectacle screenfetch firefox --noconfirm
+pacman -S screenfetch firefox vlc gimp libreoffice libreoffice-fresh-ru obs-studio audacity qbittorrent --noconfirm
 
 echo 'Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable NetworkManager
