@@ -69,6 +69,16 @@ echo 'Cтавим SDDM'
 pacman -S sddm --noconfirm
 systemctl enable sddm
 
+echo "[General]" > /etc/sddm.conf
+echo "# Halt command" >> /etc/sddm.conf
+echo "HaltCommand=/bin/systemctl poweroff" >> /etc/sddm.conf
+echo "# Initial NumLock state" >> /etc/sddm.conf
+echo "# Valid values: on|off|none" >> /etc/sddm.conf
+echo "# If property is set to none, numlock won't be changed Numlock=on" >> /etc/sddm.conf
+echo "Numlock=on" >> /etc/sddm.conf
+echo "# Reboot command" >> /etc/sddm.conf
+echo "RebootCommand=/bin/systemctl reboot" >> /etc/sddm.conf
+
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
 
