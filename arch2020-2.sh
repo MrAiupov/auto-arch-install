@@ -85,7 +85,7 @@ echo 'Установка аудиодрайверов'
 pacman -S alsa-lib alsa-utils plasma-pa --noconfirm
 
 echo 'Ставим дополнительные программы'
-pacman -S ark screenfetch firefox --noconfirm
+pacman -S ark spectacle screenfetch firefox --noconfirm
 
 echo 'Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable NetworkManager
