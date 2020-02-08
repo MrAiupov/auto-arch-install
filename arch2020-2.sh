@@ -88,7 +88,7 @@ echo 'Установка KDE программ'
 pacman -S ark spectacle kcalc krita kdenlive --noconfirm
 
 echo 'Ставим дополнительные программы'
-pacman -S screenfetch firefox vlc gimp libreoffice libreoffice-fresh-ru obs-studio audacity qbittorrent --noconfirm
+pacman -S screenfetch firefox firefox-i18n-ru vlc gimp libreoffice libreoffice-fresh-ru obs-studio audacity qbittorrent --noconfirm
 
 echo 'Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable NetworkManager
