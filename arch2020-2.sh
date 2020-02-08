@@ -79,7 +79,7 @@ echo 'Поддержка ntfc формата'
 pacman -S ntfs-3g --noconfirm
 
 echo 'Драйвера Nvidea'
-pacman -S nvidea lib32-nvidia-utils vulkan-tools --noconfirm
+pacman -S nvidia lib32-nvidia-utils vulkan-tools --noconfirm
 
 echo 'Установка аудиодрайверов'
 pacman -S alsa-lib alsa-utils plasma-pa --noconfirm
