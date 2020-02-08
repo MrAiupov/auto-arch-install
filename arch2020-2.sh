@@ -76,7 +76,7 @@ echo 'Ставим сеть'
 pacman -S networkmanager network-manager-applet ppp --noconfirm
 
 echo 'Поддержка ntfc формата'
-pacman -S ntfs-3g --noconfirm
+pacman -S ntfs-3g sddm-kcm --noconfirm
 
 echo 'Драйвера Nvidea'
 pacman -S nvidia lib32-nvidia-utils vulkan-tools --noconfirm
