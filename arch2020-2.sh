@@ -63,10 +63,10 @@ echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
 echo 'Установка KDE Plasma'
-pacman -Sy plasma-desktop kdebase --noconfirm
+pacman -Sy plasma kdebase --noconfirm
 
 echo 'Cтавим SDDM'
-pacman -S sddm --noconfirm
+pacman -S sddm sddm-kcm --noconfirm
 systemctl enable sddm
 
 echo "[General]" > /etc/sddm.conf
@@ -80,25 +80,31 @@ echo "# Reboot command" >> /etc/sddm.conf
 echo "RebootCommand=/bin/systemctl reboot" >> /etc/sddm.conf
 
 echo 'Ставим шрифты'
-pacman -S ttf-liberation ttf-dejavu --noconfirm 
+pacman -S ttf-liberation ttf-dejavu wqy-zenhei --noconfirm 
 
 echo 'Ставим сеть'
 pacman -S networkmanager network-manager-applet ppp --noconfirm
 
 echo 'Поддержка ntfc формата'
-pacman -S ntfs-3g sddm-kcm ufw --noconfirm
+pacman -S ntfs-3g ufw --noconfirm
 
-echo 'Драйвера Nvidea'
-pacman -S nvidia lib32-nvidia-utils vulkan-tools --noconfirm
+echo 'Драйвера видеодрайверов Nvidea'
+pacman -S nvidia vulkan-tools vulkan-icd-loader lib32-nvidia-utils lib32-vulkan-icd-loader --noconfirm
 
 echo 'Установка аудиодрайверов'
-pacman -S alsa-lib alsa-utils plasma-pa --noconfirm
+pacman -S alsa-lib alsa-utils plasma-pa lib32-alsa-plugins lib32-curl --noconfirm
 
 echo 'Установка KDE программ'
-pacman -S ark spectacle kcalc krita kdenlive --noconfirm
+pacman -S ark spectacle kcalc krita kdenlive powerdevil okular --noconfirm
+
+echo 'Установка Wine'
+pacman -S wine wine-gecko wine-mono multilib-devel --noconfirm
+
+echo 'Установка Steam и Litris'
+pacman -S steam lib32-alsa-plugins lib32-curl lutris --noconfirm
 
 echo 'Ставим дополнительные программы'
-pacman -S screenfetch firefox firefox-i18n-ru vlc gimp libreoffice libreoffice-fresh-ru obs-studio audacity qbittorrent --noconfirm
+pacman -S screenfetch chromium firefox firefox-i18n-ru opera vlc gimp libreoffice libreoffice-fresh-ru obs-studio audacity qbittorrent telegram-desktop --noconfirm
 
 echo 'Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable NetworkManager
