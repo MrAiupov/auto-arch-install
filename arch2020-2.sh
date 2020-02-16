@@ -81,7 +81,7 @@ echo 'Драйвера видеодрайверов Nvidea'
 pacman -S nvidia vulkan-tools vulkan-icd-loader lib32-nvidia-utils lib32-vulkan-icd-loader --noconfirm
 
 echo 'Установка аудиодрайверов'
-pacman -S alsa-lib alsa-utils plasma-pa lib32-alsa-plugins lib32-curl --noconfirm
+pacman -S alsa-lib alsa-utils lib32-alsa-plugins lib32-curl --noconfirm
 
 echo 'Установка Wine'
 pacman -S wine wine-gecko wine-mono multilib-devel --noconfirm
