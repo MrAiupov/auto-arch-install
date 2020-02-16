@@ -62,22 +62,11 @@ fi
 echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
-echo 'Установка KDE Plasma'
-pacman -Sy plasma kdebase --noconfirm
+echo 'Cтавим LightDM'
+pacman -S lightdm lightdm-gtk-greeter numlockx --noconfirm
+systemctl enable lightdm
 
-echo 'Cтавим SDDM'
-pacman -S sddm sddm-kcm --noconfirm
-systemctl enable sddm
-
-echo "[General]" > /etc/sddm.conf
-echo "# Halt command" >> /etc/sddm.conf
-echo "HaltCommand=/bin/systemctl poweroff" >> /etc/sddm.conf
-echo "# Initial NumLock state" >> /etc/sddm.conf
-echo "# Valid values: on|off|none" >> /etc/sddm.conf
-echo "# If property is set to none, numlock won't be changed Numlock=on" >> /etc/sddm.conf
-echo "Numlock=on" >> /etc/sddm.conf
-echo "# Reboot command" >> /etc/sddm.conf
-echo "RebootCommand=/bin/systemctl reboot" >> /etc/sddm.conf
+echo "greeter-setup-script=/usr/bin/numlockx on" >> /etc/lightdm/lightdm.conf
 
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu wqy-zenhei --noconfirm 
@@ -93,9 +82,6 @@ pacman -S nvidia vulkan-tools vulkan-icd-loader lib32-nvidia-utils lib32-vulkan-
 
 echo 'Установка аудиодрайверов'
 pacman -S alsa-lib alsa-utils plasma-pa lib32-alsa-plugins lib32-curl --noconfirm
-
-echo 'Установка KDE программ'
-pacman -S ark spectacle kcalc krita kdenlive powerdevil okular --noconfirm
 
 echo 'Установка Wine'
 pacman -S wine wine-gecko wine-mono multilib-devel --noconfirm
