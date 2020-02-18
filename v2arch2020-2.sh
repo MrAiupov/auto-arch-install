@@ -9,8 +9,7 @@ ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
 
 echo '3.4 Добавляем русскую локаль системы'
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
-echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen 
-localectl set-x11-keymap us,ru pc104 "" grp:alt_shift_toggle
+echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen
 
 echo 'Обновим текущую локаль системы'
 locale-gen
