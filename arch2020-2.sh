@@ -79,8 +79,6 @@ echo "Numlock=on" >> /etc/sddm.conf
 echo "# Reboot command" >> /etc/sddm.conf
 echo "RebootCommand=/bin/systemctl reboot" >> /etc/sddm.conf
 
-echo "greeter-setup-script=/usr/bin/numlockx on" >> /etc/lightdm/lightdm.conf
-
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu wqy-zenhei --noconfirm 
 
