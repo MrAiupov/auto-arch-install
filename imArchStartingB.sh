@@ -104,7 +104,7 @@ echo 'Установка Steam и Litris'
 pacman -S steam lib32-alsa-plugins lib32-curl lutris --noconfirm
 
 echo 'Ставим дополнительные программы'
-pacman -S screenfetch chromium firefox firefox-i18n-ru opera vlc gimp libreoffice libreoffice-fresh-ru obs-studio audacity qbittorrent --noconfirm
+pacman -S screenfetch chromium firefox firefox-i18n-ru opera opera-ffmpeg-codecs vlc gimp libreoffice libreoffice-fresh-ru obs-studio audacity qbittorrent --noconfirm
 
 echo 'Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable NetworkManager
