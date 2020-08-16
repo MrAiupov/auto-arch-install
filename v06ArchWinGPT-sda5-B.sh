@@ -25,8 +25,8 @@ mkinitcpio -p linux
 
 echo '3.5 Устанавливаем загрузчик'
 pacman -Syy
-pacman -S grub efibootmgr os-prober --noconfirm 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+pacman -S grub --noconfirm 
+grub-install /dev/sda
 
 echo 'Обновляем grub.cfg'
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -51,16 +51,8 @@ echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
-echo "Устанавка Arch Linux на виртуальную машину?"
-read -p "1 - Да, 0 - Нет: " vm_setting
-if [[ $vm_setting == 0 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit"
-elif [[ $vm_setting == 1 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"
-fi
-
 echo 'Ставим иксы и драйвера'
-pacman -S $gui_install
+pacman -S xorg-server xorg-drivers xorg-xinit
 
 echo 'Cтавим SDDM'
 pacman -S sddm --noconfirm
@@ -109,6 +101,23 @@ pacman -S screenfetch chromium firefox firefox-i18n-ru opera vlc gimp libreoffic
 
 echo 'Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable NetworkManager
+
+echo 'Добавление репозитория Herecura'
+echo "[herecura]" >> /etc/pacman.conf
+echo "Server = https://repo.herecura.be/$repo/$arch" >> /etc/pacman.conf
+pacman -Syyy
+
+echo 'Установка AUR Yay'
+mkdir -p /tmp/yay_install
+cd /tmp/yay_install
+sudo pacman -S git  --noconfirm
+git clone https://aur.archlinux.org/yay.git --noconfirm
+cd yay
+makepkg -sir --needed --noconfirm --skippgpcheck
+cd ..
+cd ..
+rm -rf yay_install
+cd ..
 
 echo 'Установка завершена! Перезагрузите систему.'
 exit
