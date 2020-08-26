@@ -206,8 +206,8 @@ lib32-nvidia-utils lib32-vulkan-icd-loader --noconfirm
 $ pacman -S alsa-lib alsa-utils lib32-alsa-plugins lib32-curl --noconfirm
 
 Установить супер минимальный набор рабочего стола Plasma, регулятор громкости, 
-консоль и управление питанием
-$ sudo pacman -S plasma-desktop plasma-pa konsole powerdevil
+консоль и управление питанием, разрешение экрана
+$ sudo pacman -S plasma-desktop plasma-pa konsole powerdevil kscreen
 
 Установка программ, которые обязательно нужны
 $ pacman -S dolphin ark spectacle kcalc okular gnome-disk-utility gparted 
