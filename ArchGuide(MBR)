@@ -164,7 +164,7 @@ $ grub-install /dev/sda
 $ grub-mkconfig -o /boot/grub/grub.cfg
 
 Ставим программу для Wi-fi
-$ pacman -S dialog wpa_supplicant --noconfirm 
+$ pacman -S dialog wpa_supplicant broadcom-wl --noconfirm 
 
 Устанавливаем SUDO (обращаем внимание на кавычки)
 $ echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
