@@ -205,8 +205,9 @@ lib32-nvidia-utils lib32-vulkan-icd-loader --noconfirm
 Установка аудиодрайверов (обязательно)
 $ pacman -S alsa-lib alsa-utils lib32-alsa-plugins lib32-curl --noconfirm
 
-Установить супер минимальный набор рабочего стола Plasma, регулятор громкости, и консоль
-$ sudo pacman -S plasma-desktop plasma-pa konsole
+Установить супер минимальный набор рабочего стола Plasma, регулятор громкости, 
+консоль и управление питанием
+$ sudo pacman -S plasma-desktop plasma-pa konsole powerdevil
 
 Установка программ, которые обязательно нужны
 $ pacman -S dolphin ark spectacle kcalc okular gnome-disk-utility gparted 
@@ -220,7 +221,7 @@ $ pacman -S steam lib32-alsa-plugins lib32-curl lutris --noconfirm
 
 Ставим дополнительные программы (по желанию)
 $ pacman -S firefox firefox-i18n-ru opera vlc gimp krita kdenlive 
-powerdevil libreoffice libreoffice-fresh-ru obs-studio audacity 
+libreoffice libreoffice-fresh-ru obs-studio audacity 
 qbittorrent inkscape handbrake --noconfirm
 
 Подключаем автозагрузку менеджера входа и интернет
