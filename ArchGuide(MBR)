@@ -69,6 +69,7 @@ $ mount /dev/sda7 /mnt
 
 Форматируем home раздел в ext4 формат и сразу монтируем
 $ mkfs.ext4 /dev/sda6
+$ mkdir /mnt/home
 $ mount /dev/sda6 /mnt/home
 
 Форматируем раздел swap и монтируем
