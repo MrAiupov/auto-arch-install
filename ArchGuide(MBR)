@@ -220,8 +220,8 @@ $ pacman -S wine wine-gecko wine-mono multilib-devel --noconfirm
 $ pacman -S steam lib32-alsa-plugins lib32-curl lutris --noconfirm
 
 Ставим дополнительные программы (по желанию)
-$ pacman -S firefox firefox-i18n-ru opera vlc elisa gimp krita kdenlive 
-libreoffice libreoffice-fresh-ru obs-studio audacity 
+$ pacman -S firefox firefox-i18n-ru opera opera-ffmpeg-codecs vlc elisa 
+gimp krita kdenlive libreoffice libreoffice-fresh-ru obs-studio audacity 
 qbittorrent inkscape handbrake --noconfirm
 
 Подключаем автозагрузку менеджера входа и интернет
