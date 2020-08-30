@@ -217,7 +217,7 @@ $ pacman -S alsa-lib alsa-utils lib32-alsa-plugins lib32-curl --noconfirm
 $ sudo pacman -S plasma-desktop plasma-pa konsole powerdevil kscreen khotkeys
 
 Установка программ, которые обязательно нужны
-$ pacman -S dolphin ark spectacle kcalc okular gnome-disk-utility gparted 
+$ pacman -S dolphin ark kate spectacle kcalc okular gnome-disk-utility gparted 
 gwenview guvcview kde-gtk-config user-manager screenfetch chromium --noconfirm
 
 Установка Wine (по желанию)
