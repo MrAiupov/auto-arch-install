@@ -88,7 +88,7 @@ $ mount /dev/sdb2 /mnt/system
 
 Выбор зеркал для загрузки из России.
 автоматический подбор пяти ближайших зеркал
-$ reflector --verbose -l 5 -p https --sort rate --save /etc/pacman.d/mirrorlist
+$ reflector --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
 Но настоятельно рекоменду набирать вручную, хоть это и самое сложное в нашем инструкции,
 потом всё будет легче. (просьба обратить внимание, что лишь в первой строчке одна стрелка вправо, 
