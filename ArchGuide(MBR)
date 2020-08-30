@@ -154,7 +154,7 @@ $ mkinitcpio -p linux
 
 Устанавливаем загрузчик (обязательно)
 $ pacman -Syy
-$ pacman -S grub --noconfirm 
+$ pacman -S grub efibootmgr os-prober --noconfirm 
 $ grub-install /dev/sda
 (именно sda, полностью весь диск, на котором у нас система, а не какой то один раздел, 
 именно так и ставят на MBR, а вот с GPT будет по другому, там уже нужно создавать 
