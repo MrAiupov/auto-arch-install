@@ -51,16 +51,8 @@ echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
-echo "Устанавка Arch Linux на виртуальную машину?"
-read -p "1 - Да, 0 - Нет: " vm_setting
-if [[ $vm_setting == 0 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit"
-elif [[ $vm_setting == 1 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"
-fi
-
 echo 'Ставим иксы и драйвера'
-pacman -S $gui_install
+pacman -S xorg-server xorg-drivers xorg-xinit --noconfirm 
 
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu wqy-zenhei --noconfirm 
