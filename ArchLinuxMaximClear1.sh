@@ -21,10 +21,11 @@ mkswap /dev/sda5
 swapon /dev/sda5
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
-mkdir /mnt/data
-mkdir /mnt/system
-mount /dev/sdb1 /mnt/data
-mount /dev/sdb2 /mnt/system
+mkdir /mnt/media
+mkdir /mnt/media/data
+mkdir /mnt/media/system
+mount /dev/sdb1 /mnt/media/data
+mount /dev/sdb2 /mnt/media/system
 
 echo '3.1 Выбор зеркал для загрузки. Ставим зеркала для России'
 echo "##" > /etc/pacman.d/mirrorlist
