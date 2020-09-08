@@ -54,19 +54,29 @@ pacman -Syy
 echo 'Ставим иксы и драйвера'
 pacman -S xorg-server xorg-drivers xorg-xinit --noconfirm 
 
+echo 'Ставим SDDM'
+pacman -S sddm sddm-kcm --noconfirm
+
 echo 'Ставим шрифты'
-pacman -S ttf-liberation ttf-dejavu wqy-zenhei --noconfirm 
+pacman -S ttf-liberation ttf-dejavu wqy-zenhei --noconfirm
 
 echo 'Ставим сеть'
-pacman -S networkmanager ppp --noconfirm
+pacman -S networkmanager network-manager-applet ppp --noconfirm
 
 echo 'Поддержка ntfc формата'
 pacman -S ntfs-3g ufw --noconfirm
 
 echo 'Установка аудиодрайверов'
-pacman -S alsa-lib alsa-utils --noconfirm
+pacman -S alsa-lib alsa-utils lib32-alsa-plugins lib32-curl --noconfirm
+
+echo 'Установка Plasma'
+pacman -S plasma-desktop plasma-pa konsole powerdevil kscreen khotkeys --noconfirm
+
+echo 'Установка программ'
+pacman -S dolphin ark kate spectacle kcalc okular gnome-disk-utility gparted gwenview kde-gtk-config user-manager neofetch screenfetch chromium --noconfirm
 
 echo 'Подключаем автозагрузку менеджера входа и интернет'
+systemctl enable sddm
 systemctl enable NetworkManager
 
 echo 'Установка завершена! Перезагрузите систему.'
