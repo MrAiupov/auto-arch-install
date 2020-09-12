@@ -10,6 +10,7 @@ echo '2.3 Синхронизация системных часов'
 timedatectl set-ntp true
 
 echo '2.4.2 Форматирование и монтирование дисков'
+mkfs.fat -F32 /dev/sda1
 mkfs.ext4 /dev/sda3
 mount /dev/sda3 /mnt
 mkswap /dev/sda2
