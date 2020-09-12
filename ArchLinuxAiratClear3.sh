@@ -14,9 +14,6 @@ echo "Numlock=on" >> /etc/sddm.conf
 echo "# Reboot command" >> /etc/sddm.conf
 echo "RebootCommand=/bin/systemctl reboot" >> /etc/sddm.conf
 
-echo 'Установка локального времени'
-timedatectl set-local-rtc 1
-
 echo 'Драйвера видеодрайверов Nvidea'
 pacman -S nvidia vulkan-tools vulkan-icd-loader lib32-nvidia-utils lib32-vulkan-icd-loader --noconfirm
 
