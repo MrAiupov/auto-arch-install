@@ -14,8 +14,8 @@ mkfs.ext4 /dev/sda3
 mount /dev/sda3 /mnt
 mkswap /dev/sda2
 swapon /dev/sda2
-mkdir /mnt/boot
-mount /dev/sda1 /mnt/boot
+mkdir /mnt/boot/efi
+mount /dev/sda1 /mnt/boot/efi
 
 echo 'Дополнительные разделы'
 mkdir /mnt/hard1
