@@ -10,15 +10,15 @@ echo '2.3 Синхронизация системных часов'
 timedatectl set-ntp true
 
 echo '2.4.2 Форматирование и монтирование дисков'
-mkfs.ext4 /dev/sda4
-mount /dev/sda4 /mnt
+mkfs.ext4 /dev/sda3
+mount /dev/sda3 /mnt
+mkswap /dev/sda2
+swapon /dev/sda2
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 
 echo 'Дополнительные разделы'
-mkdir /mnt/windows
 mkdir /mnt/hard1
-mount /dev/sda3 /mnt/windows
 mount /dev/sdb1 /mnt/hard1
 
 echo '3.1 Выбор зеркал для загрузки. Ставим зеркала для России'
