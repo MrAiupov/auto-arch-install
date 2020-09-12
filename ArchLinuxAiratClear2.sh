@@ -1,9 +1,5 @@
 #!/bin/bash
-read -p "Введите имя компьютера: " hostname
-read -p "Введите имя пользователя: " username
 
-echo 'Прописываем имя компьютера'
-echo $hostname > /etc/hostname
 ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
 
 echo '3.4 Добавляем русскую локаль системы'
@@ -34,6 +30,12 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo 'Ставим программу для Wi-fi'
 pacman -S dialog wpa_supplicant broadcom-wl --noconfirm 
 
+echo 'Добавляем имя компьютера и пользователя'
+read -p "Введите имя компьютера: " hostname
+read -p "Введите имя пользователя: " username
+echo 'Прописываем имя компьютера'
+echo $hostname > /etc/hostname
+
 echo 'Добавляем пользователя'
 useradd -m -g users -G wheel -s /bin/bash $username
 
@@ -42,6 +44,9 @@ passwd
 
 echo 'Устанавливаем пароль пользователя'
 passwd $username
+
+echo 'Установка локального времени'
+timedatectl set-local-rtc 1
 
 echo 'Устанавливаем SUDO'
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
