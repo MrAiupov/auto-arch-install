@@ -14,6 +14,9 @@ echo "Numlock=on" >> /etc/sddm.conf
 echo "# Reboot command" >> /etc/sddm.conf
 echo "RebootCommand=/bin/systemctl reboot" >> /etc/sddm.conf
 
+echo 'Установка локального времени'
+timedatectl set-local-rtc 1
+
 echo 'Драйвера видеодрайверов Nvidea'
 pacman -S nvidia vulkan-tools vulkan-icd-loader lib32-nvidia-utils lib32-vulkan-icd-loader --noconfirm
 
@@ -21,7 +24,6 @@ echo 'Установка аудиодрайверов'
 pacman -S alsa-lib alsa-utils lib32-alsa-plugins lib32-curl --noconfirm
 
 echo 'Установить рабочий стол Plasma'
-
 sudo pacman -S plasma-desktop plasma-pa konsole powerdevil kscreen khotkeys --noconfirm
 
 echo 'Установка нужных программ'
