@@ -22,7 +22,7 @@ mkinitcpio -p linux
 echo '3.5 Устанавливаем загрузчик'
 pacman -Syy
 pacman -S grub efibootmgr os-prober --noconfirm
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB --removable
+grub-install /dev/sda
 
 echo 'Обновляем grub.cfg'
 grub-mkconfig -o /boot/grub/grub.cfg
