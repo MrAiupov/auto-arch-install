@@ -19,10 +19,6 @@ mkdir /mnt/boot
 mkdir /mnt/boot/efi
 mount /dev/sda1 /mnt/boot/efi
 
-echo 'Дополнительные разделы'
-mkdir /mnt/hard1
-mount /dev/sdb1 /mnt/hard1
-
 echo '3.1 Выбор зеркал для загрузки. Ставим зеркала для России'
 echo "##" > /etc/pacman.d/mirrorlist
 echo "##Arch Linux repository mirrorlist" >> /etc/pacman.d/mirrorlist
