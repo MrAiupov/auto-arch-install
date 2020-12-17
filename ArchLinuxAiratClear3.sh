@@ -24,7 +24,7 @@ echo 'Установить рабочий стол Plasma'
 sudo pacman -S plasma-desktop plasma-pa konsole powerdevil kscreen khotkeys --noconfirm
 
 echo 'Установка нужных программ'
-pacman -S dolphin ark kate spectacle kcalc okular gnome-disk-utility gparted gwenview kde-gtk-config user-manager screenfetch chromium --noconfirm
+pacman -S dolphin ark kate spectacle kcalc okular gnome-disk-utility gparted gwenview kde-gtk-config screenfetch chromium --noconfirm
 
 echo 'Установка Wine'
 pacman -S wine wine-gecko wine-mono multilib-devel --noconfirm
