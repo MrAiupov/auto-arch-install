@@ -18,6 +18,12 @@ swapon /dev/sda2
 mkdir /mnt/boot
 mkdir /mnt/boot/efi
 mount /dev/sda1 /mnt/boot/efi
+mkdir /mnt/work
+mkdir /mnt/movie
+mkdir /mnt/archive
+mount /dev/sdb2 /mnt/work
+mount /dev/sdb3 /mnt/movie
+mount /dev/sdb4 /mnt/archive
 
 echo '3.1 Выбор зеркал для загрузки. Ставим зеркала для России'
 echo "##" > /etc/pacman.d/mirrorlist
