@@ -10,20 +10,22 @@ echo '2.3 Синхронизация системных часов'
 timedatectl set-ntp true
 
 echo '2.4.2 Форматирование и монтирование дисков'
-mkfs.fat -F32 /dev/sda1
-mkfs.ext4 /dev/sda3
-mount /dev/sda3 /mnt
-mkswap /dev/sda2
-swapon /dev/sda2
+mkfs.fat -F32 /dev/nvme0n1p1
+mkfs.ext4 /dev/nvme0n1p3
+mount /dev/nvme0n1p3 /mnt
+mkswap /dev/nvme0n1p2
+swapon /dev/nvme0n1p2
 mkdir /mnt/boot
 mkdir /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
+mount /dev/nvme0n1p1 /mnt/boot/efi
 mkdir /mnt/work
 mkdir /mnt/movie
 mkdir /mnt/archive
+mkdir /mnt/files
 mount /dev/sdb2 /mnt/work
 mount /dev/sdb3 /mnt/movie
 mount /dev/sdb4 /mnt/archive
+mount /dev/sda1 /mnt/files
 
 echo '3.1 Выбор зеркал для загрузки. Ставим зеркала для России'
 echo "##" > /etc/pacman.d/mirrorlist
@@ -39,7 +41,7 @@ echo "Server = https://mirror.rol.ru/archlinux/\$repo/os/\$arch" >> /etc/pacman.
 echo "Server = http://archlinux.zepto.cloud/\$repo/os/\$arch" >> /etc/pacman.d/mirrorlist
 
 echo '3.2 Установка основных пакетов'
-pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd netctl
+pacstrap /mnt base base-devel linux-zen linux-firmware nano dhcpcd netctl
 
 echo '3.3 Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
