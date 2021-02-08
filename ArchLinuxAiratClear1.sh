@@ -41,7 +41,7 @@ echo "Server = https://mirror.rol.ru/archlinux/\$repo/os/\$arch" >> /etc/pacman.
 echo "Server = http://archlinux.zepto.cloud/\$repo/os/\$arch" >> /etc/pacman.d/mirrorlist
 
 echo '3.2 Установка основных пакетов'
-pacstrap /mnt base base-devel linux-zen linux-firmware nano dhcpcd netctl
+pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd netctl
 
 echo '3.3 Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
