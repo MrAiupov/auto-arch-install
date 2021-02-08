@@ -17,7 +17,7 @@ echo 'KEYMAP=ru' >> /etc/vconsole.conf
 echo 'FONT=cyr-sun16' >> /etc/vconsole.conf
 
 echo 'Создадим загрузочный RAM диск'
-mkinitcpio -p linux-zen
+mkinitcpio -p linux
 
 echo '3.5 Устанавливаем загрузчик'
 pacman -Syy
