@@ -21,7 +21,7 @@ echo 'Установка аудиодрайверов'
 pacman -S alsa-lib alsa-utils lib32-alsa-plugins lib32-curl --noconfirm
 
 echo 'Установить рабочий стол Plasma'
-sudo pacman -S plasma-desktop plasma-pa konsole powerdevil kscreen khotkeys --noconfirm
+sudo pacman -S plasma-desktop plasma-pa konsole powerdevil kscreen khotkeys kinfocenter plasma-thunderbolt plasma-vault plasma-workspace-wallpapers xdg-desktop-portal xdg-desktop-portal-kde --noconfirm
 
 echo 'Установка нужных программ'
 pacman -S dolphin ark kate spectacle kcalc okular gnome-disk-utility gparted gwenview kde-gtk-config kwallet-pam screenfetch chromium --noconfirm
