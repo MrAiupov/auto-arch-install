@@ -21,7 +21,7 @@ mount /dev/nvme0n1p1 /mnt/boot/efi
 mkdir /mnt/documents
 mkdir /mnt/windows
 mount /dev/sdb1 /mnt/documents
-mount /dev/sda3 /mnt/windows
+mount /dev/sda1 /mnt/files
 
 echo '3.1 Выбор зеркал для загрузки. Ставим зеркала для России'
 echo "##" > /etc/pacman.d/mirrorlist
