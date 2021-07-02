@@ -19,7 +19,7 @@ mkdir /mnt/boot
 mkdir /mnt/boot/efi
 mount /dev/nvme0n1p1 /mnt/boot/efi
 mkdir /mnt/documents
-mkdir /mnt/windows
+mkdir /mnt/files
 mount /dev/sdb1 /mnt/documents
 mount /dev/sda1 /mnt/files
 
