@@ -18,9 +18,9 @@ swapon /dev/nvme0n1p2
 mkdir /mnt/boot
 mkdir /mnt/boot/efi
 mount /dev/nvme0n1p1 /mnt/boot/efi
-mkdir /mnt/documents
+mkdir /mnt/archive
 mkdir /mnt/files
-mount /dev/sdb1 /mnt/documents
+mount /dev/sdb1 /mnt/archive
 mount /dev/sda1 /mnt/files
 
 echo '3.1 Выбор зеркал для загрузки. Ставим зеркала для России'
